@@ -6,25 +6,45 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#ffffff">
     
-    <title>Online Mouse Jiggler | Keep Teams Active & Screen Awake</title>
-    <meta name="description" content="Free Online Mouse Jiggler 2025. Keeps your computer awake, mouse moving, and Teams/Slack status green. No download required. Works on Windows, Mac, & Mobile.">
-    <meta name="keywords" content="mouse jiggler, mouse mover, wiggler, keep computer awake, prevent sleep, mouse jiggler online, move mouse, active status, teams green status">
+    <title>Online Mouse Jiggler | Move Mouse Automatically & Keep Screen Awake</title>
+    
+    <meta name="description" content="Best Free Online Mouse Jiggler 2025. Prevent computer sleep, keep Teams green, and auto move mouse without download. Works on Windows, Mac, & Android.">
+    
+    <meta name="keywords" content="mouse jiggler, move mouse, mouse mover, wiggler, keep computer awake, mouse auto mover, mouse jiggler online, mouse movement, automatic mouse mover, mouse jiggler app, jiggler mouse, move mouse online, mouse jiggler download, mousemover, mousejiggler, wiggle mouse, mouse simulator, auto mouse mover, mouse bot, mouse wiggle, free mouse jiggler, undetectable mouse jiggler, mouse shaker, active status tool, マウスジグラー, 鼠标自动移动">
+    
     <meta name="author" content="StayAwake Pro">
+    <link rel="canonical" href="https://djutgjdtd5.github.io/" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Online Mouse Jiggler",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free tool to move mouse automatically and keep computer awake to prevent sleep mode."
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- PREMIUM WHITE THEME CSS --- */
+        /* --- PREMIUM WHITE THEME --- */
         :root {
             --primary: #000000;
-            --active: #16a34a;  /* Premium Green */
-            --stop: #dc2626;    /* Premium Red */
+            --active: #16a34a;  
+            --stop: #dc2626;    
             --bg: #ffffff;
             --text: #1f2937;
             --text-light: #6b7280;
             --border: #e5e7eb;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -40,115 +60,73 @@
 
         /* Nav */
         nav {
-            width: 100%; padding: 1.2rem 2rem;
+            width: 100%; padding: 1rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
             border-bottom: 1px solid var(--border);
             background: rgba(255,255,255,0.95);
             position: sticky; top: 0; z-index: 50;
         }
-        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+        .logo { font-weight: 800; font-size: 1.2rem; }
         .logo span { color: var(--active); }
 
-        /* --- AD CONTAINERS --- */
+        /* AD CONTAINERS */
         .ad-wrapper {
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex; justify-content: center; align-items: center;
             margin: 1.5rem 0;
-            min-height: 100px; 
+            min-height: 90px; 
         }
         
-        /* Clean Ad Slot Styling */
+        /* Ad Slots */
         .ad-slot {
-            text-align: center;
             background: #ffffff;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex; justify-content: center; align-items: center;
         }
-        .top-slot { width: 728px; height: 90px; }
-        .bottom-slot { width: 300px; height: 250px; }
 
         /* Main Card */
         .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 500px;
-            padding: 1rem;
-            text-align: center;
+            display: flex; flex-direction: column; align-items: center;
+            width: 100%; max-width: 500px;
+            padding: 1rem; text-align: center;
         }
 
-        h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem; }
-        p.sub { color: var(--text-light); margin-bottom: 2.5rem; font-size: 1rem; }
+        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem; line-height: 1.1; }
+        p.sub { color: var(--text-light); margin-bottom: 2rem; font-size: 1rem; }
 
         /* Status & Timer */
         .status-box { margin-bottom: 2rem; }
         .status-icon {
-            font-size: 4rem;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-            filter: grayscale(100%);
-            transition: all 0.3s;
-            opacity: 0.5;
+            font-size: 3.5rem; margin-bottom: 0.5rem; display: inline-block;
+            filter: grayscale(100%); transition: all 0.3s; opacity: 0.5;
         }
         .status-icon.active {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
+            filter: grayscale(0%); opacity: 1; transform: scale(1.1);
             animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-        .timer {
-            font-family: monospace;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
-        .status-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-light);
-        }
+        .timer { font-family: monospace; font-size: 2.5rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+        .status-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-light); }
 
-        /* Action Button */
+        /* Button */
         .btn-main {
-            width: 100%; padding: 1.2rem;
-            border-radius: 12px; border: none;
-            font-size: 1.1rem; font-weight: 700;
-            cursor: pointer; transition: all 0.2s;
-            box-shadow: var(--shadow);
-            background: var(--primary); color: white;
+            width: 100%; padding: 1.2rem; border-radius: 12px; border: none;
+            font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+            box-shadow: var(--shadow); background: var(--primary); color: white;
         }
-        
-        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .btn-main:active { transform: scale(0.98); }
-
-        .btn-main.stop-mode {
-            background: white; color: var(--stop);
-            border: 2px solid #fee2e2;
-        }
+        .btn-main:hover { transform: translateY(-2px); }
+        .btn-main.stop-mode { background: white; color: var(--stop); border: 2px solid #fee2e2; }
         .btn-main.stop-mode:hover { border-color: var(--stop); background: #fef2f2; }
 
-        .seo-footer {
-            margin-top: 2rem; font-size: 0.8rem; color: #9ca3af;
-            max-width: 600px; line-height: 1.5; text-align: center;
+        /* SEO SECTION (Visible to Bots, Clean for Humans) */
+        .seo-content {
+            margin-top: 3rem; background: #f9fafb; padding: 2rem; border-radius: 16px;
+            text-align: left; width: 100%; border: 1px solid var(--border);
         }
-
+        .seo-content h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+        .seo-content p { font-size: 0.9rem; color: #4b5563; line-height: 1.6; margin-bottom: 1rem; }
+        
         .hidden-video { position: absolute; width: 1px; height: 1px; opacity: 0.001; pointer-events: none; }
     </style>
 </head>
@@ -160,7 +138,7 @@
     </nav>
 
     <div class="ad-wrapper">
-        <div class="ad-slot top-slot" id="top-ad-container">
+        <div class="ad-slot" id="top-ad-container" style="width: 728px; height: 90px;">
             <script type="text/javascript">
                 atOptions = {
                     'key' : 'da1a352c776635fa7984cd1fb95c4041',
@@ -179,8 +157,8 @@
     </video>
 
     <div class="container">
-        <h1>Mouse Jiggler</h1>
-        <p class="sub">Prevent computer sleep & keep Teams active.</p>
+        <h1>Mouse Jiggler Online</h1>
+        <p class="sub">Keep computer awake & prevent sleep mode automatically.</p>
 
         <div class="status-box">
             <div class="status-icon" id="statusIcon">💤</div>
@@ -190,40 +168,46 @@
 
         <button class="btn-main" id="toggleBtn">ACTIVATE JIGGLER</button>
 
-        <div class="seo-footer">
-            <p><strong>Safe & Secure:</strong> Runs entirely in your browser. No downloads needed.</p>
-            <p>Perfect for maintaining active status on Slack, Teams, Discord, and Skype.</p>
+        <div class="ad-wrapper">
+            <div class="ad-slot" id="bottom-ad-container" style="width: 300px; height: 250px;">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : 'eea17f69018ec26e6e52c77738858670',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/eea17f69018ec26e6e52c77738858670/invoke.js"></script>
+            </div>
         </div>
-    </div>
 
-    <div class="ad-wrapper">
-        <div class="ad-slot bottom-slot" id="bottom-ad-container">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : 'eea17f69018ec26e6e52c77738858670',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/eea17f69018ec26e6e52c77738858670/invoke.js"></script>
+        <div class="seo-content">
+            <h2>Why use this Online Mouse Mover?</h2>
+            <p>
+                Looking for a <strong>mouse jiggler online</strong> to keep your PC active? Our tool works as a <strong>mouse auto mover</strong> and <strong>wiggler</strong> to prevent screen lock. Whether you need a <strong>mouse jiggler for YouTube</strong> streaming or a <strong>video to keep computer awake</strong>, this website handles it all.
+            </p>
+            <p>
+                Unlike a downloadable <strong>mouse jiggler exe</strong> or <strong>mouse mover app</strong>, our solution runs in your browser. It acts as a <strong>virtual mouse jiggle</strong> mechanism (also known as <em>マウスジグラー</em> in Japan or <em>鼠标自动移动</em>). It is the perfect <strong>undetectable mouse jiggler</strong> for employees wanting to maintain <strong>Teams green status</strong>.
+            </p>
+            <p>
+                Compatible with all systems, this <strong>move mouse online</strong> utility is better than a physical <strong>jiggler mouse</strong> or <strong>mouse shaker</strong> device. Simply click activate to start the <strong>automatic mouse mover</strong>. No need to search for "<strong>download move mouse</strong>" or "<strong>mouse app for pc</strong>" anymore. This is your completely <strong>free mouse jiggler</strong> solution.
+            </p>
         </div>
     </div>
 
     <script type='text/javascript' src='//pl28120871.effectivegatecpm.com/b8/2a/fe/b82afee8cc534f12fba12741bfb629a1.js'></script>
 
-
     <script>
-        // 💰 MONEY LOGIC CONFIGURATION 💰
-        // Direct Link for STOP button
+        // 💰 DIRECT LINK (Stop Button)
         const DIRECT_LINK_URL = "https://www.effectivegatecpm.com/wtv8888v?key=d837f9dc7c48bf7b0d830d9f0d04a531";
         
         let wakeLock = null;
         let timerInterval = null;
+        let refreshInterval = null;
         let startTime = null;
         let isRunning = false;
-        let refreshInterval = null;
 
         const statusIcon = document.getElementById('statusIcon');
         const statusLabel = document.getElementById('statusLabel');
@@ -231,15 +215,13 @@
         const timerDisplay = document.getElementById('timer');
         const dummyVideo = document.getElementById('dummyVideo');
 
-        // --- SMART BUTTON LOGIC ---
+        // --- BUTTON LOGIC ---
         toggleBtn.addEventListener('click', () => {
             if (!isRunning) {
-                // 👉 CASE 1: STARTING
-                // Logic: Sirf Timer shuru karo. AD MAT KHOLO.
+                // START: Only Timer
                 startJiggler();
             } else {
-                // 👉 CASE 2: STOPPING
-                // Logic: Ab Ad kholo (Direct Link) aur Timer band karo.
+                // STOP: Open Ad + Stop Timer
                 if (DIRECT_LINK_URL) {
                     window.open(DIRECT_LINK_URL, '_blank');
                 }
@@ -247,7 +229,7 @@
             }
         });
 
-        // --- CORE JIGGLER FUNCTIONS ---
+        // --- CORE FUNCTIONS ---
         async function startJiggler() {
             try {
                 if ('wakeLock' in navigator) {
@@ -258,28 +240,26 @@
                 isRunning = true;
                 startTime = Date.now();
 
-                // UI Update
+                // UI Updates
                 statusIcon.innerHTML = "⚡";
                 statusIcon.classList.add('active');
                 statusLabel.innerText = "ACTIVE • KEEPING AWAKE";
                 statusLabel.style.color = "var(--active)";
-                
                 toggleBtn.innerText = "STOP & DEACTIVATE";
                 toggleBtn.classList.add('stop-mode');
-                
                 document.title = "🟢 Active | Mouse Jiggler";
 
-                // Start Timer
+                // Timer
                 timerInterval = setInterval(() => {
                     const elapsed = Date.now() - startTime;
                     timerDisplay.innerText = new Date(elapsed).toISOString().substr(11, 8);
                 }, 1000);
                 
-                // Start Auto Refresh for Banners
+                // Ads Auto Refresh (60s)
                 startRefreshLoop();
 
             } catch (err) {
-                alert("Click anywhere on the page to activate wake lock.");
+                alert("Click anywhere to enable wake lock.");
             }
         }
 
@@ -291,31 +271,28 @@
             clearInterval(timerInterval);
             stopRefreshLoop();
 
-            // UI Update
+            // UI Reset
             statusIcon.innerHTML = "💤";
             statusIcon.classList.remove('active');
             statusLabel.innerText = "SYSTEM SLEEPING";
             statusLabel.style.color = "var(--text-light)";
-            
             toggleBtn.innerText = "ACTIVATE JIGGLER";
             toggleBtn.classList.remove('stop-mode');
-            
             document.title = "Online Mouse Jiggler";
             timerDisplay.innerText = "00:00:00";
         }
 
-        // --- AD REFRESH LOGIC (Simple Display Toggle every 60s) ---
+        // --- ADS REFRESH (Simulated) ---
         function startRefreshLoop() {
             if(refreshInterval) clearInterval(refreshInterval);
             refreshInterval = setInterval(() => {
                 const topAd = document.getElementById('top-ad-container');
                 const botAd = document.getElementById('bottom-ad-container');
                 
-                // Toggle display to force browser to repaint/check iframes
                 if(topAd) { topAd.style.display='none'; setTimeout(()=>topAd.style.display='flex', 50); }
                 if(botAd) { botAd.style.display='none'; setTimeout(()=>botAd.style.display='flex', 50); }
-                console.log("Refreshed Ads");
-            }, 60000); // 60 Seconds
+                console.log("Ads Refreshed");
+            }, 60000);
         }
 
         function stopRefreshLoop() {
