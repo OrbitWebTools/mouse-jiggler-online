@@ -56,6 +56,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden; /* Prevent horizontal scroll on mobile */
         }
 
         /* Nav */
@@ -69,18 +70,19 @@
         .logo { font-weight: 800; font-size: 1.2rem; }
         .logo span { color: var(--active); }
 
-        /* AD CONTAINERS */
+        /* AD CONTAINERS (Responsive Fix) */
         .ad-wrapper {
             width: 100%;
             display: flex; justify-content: center; align-items: center;
             margin: 1.5rem 0;
-            min-height: 90px; 
+            min-height: 90px;
+            overflow: hidden; 
         }
         
-        /* Ad Slots */
         .ad-slot {
-            background: #ffffff;
+            background: #f9fafb;
             display: flex; justify-content: center; align-items: center;
+            max-width: 100%; /* Fixes Mobile Layout */
         }
 
         /* Main Card */
@@ -119,7 +121,7 @@
         .btn-main.stop-mode { background: white; color: var(--stop); border: 2px solid #fee2e2; }
         .btn-main.stop-mode:hover { border-color: var(--stop); background: #fef2f2; }
 
-        /* SEO SECTION (Visible to Bots, Clean for Humans) */
+        /* SEO SECTION */
         .seo-content {
             margin-top: 3rem; background: #f9fafb; padding: 2rem; border-radius: 16px;
             text-align: left; width: 100%; border: 1px solid var(--border);
@@ -138,18 +140,8 @@
     </nav>
 
     <div class="ad-wrapper">
-        <div class="ad-slot" id="top-ad-container" style="width: 728px; height: 90px;">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : 'da1a352c776635fa7984cd1fb95c4041',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/da1a352c776635fa7984cd1fb95c4041/invoke.js"></script>
-        </div>
+        <div class="ad-slot" id="top-ad-container" style="min-height:90px;">
+            </div>
     </div>
 
     <video id="dummyVideo" class="hidden-video" loop playsinline muted>
@@ -169,18 +161,8 @@
         <button class="btn-main" id="toggleBtn">ACTIVATE JIGGLER</button>
 
         <div class="ad-wrapper">
-            <div class="ad-slot" id="bottom-ad-container" style="width: 300px; height: 250px;">
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : 'eea17f69018ec26e6e52c77738858670',
-                        'format' : 'iframe',
-                        'height' : 250,
-                        'width' : 300,
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="//www.highperformanceformat.com/eea17f69018ec26e6e52c77738858670/invoke.js"></script>
-            </div>
+            <div class="ad-slot" id="bottom-ad-container" style="min-height:250px;">
+                </div>
         </div>
 
         <div class="seo-content">
@@ -200,9 +182,25 @@
     <script type='text/javascript' src='//pl28120871.effectivegatecpm.com/b8/2a/fe/b82afee8cc534f12fba12741bfb629a1.js'></script>
 
     <script>
-        // 💰 DIRECT LINK (Stop Button)
+        // 💰 DIRECT LINK
         const DIRECT_LINK_URL = "https://www.effectivegatecpm.com/wtv8888v?key=d837f9dc7c48bf7b0d830d9f0d04a531";
         
+        // AD SCRIPTS DATA
+        const ADS = {
+            top: {
+                key: 'da1a352c776635fa7984cd1fb95c4041',
+                width: 728,
+                height: 90,
+                src: '//www.highperformanceformat.com/da1a352c776635fa7984cd1fb95c4041/invoke.js'
+            },
+            bottom: {
+                key: 'eea17f69018ec26e6e52c77738858670',
+                width: 300,
+                height: 250,
+                src: '//www.highperformanceformat.com/eea17f69018ec26e6e52c77738858670/invoke.js'
+            }
+        };
+
         let wakeLock = null;
         let timerInterval = null;
         let refreshInterval = null;
@@ -218,10 +216,8 @@
         // --- BUTTON LOGIC ---
         toggleBtn.addEventListener('click', () => {
             if (!isRunning) {
-                // START: Only Timer
                 startJiggler();
             } else {
-                // STOP: Open Ad + Stop Timer
                 if (DIRECT_LINK_URL) {
                     window.open(DIRECT_LINK_URL, '_blank');
                 }
@@ -249,17 +245,15 @@
                 toggleBtn.classList.add('stop-mode');
                 document.title = "🟢 Active | Mouse Jiggler";
 
-                // Timer
                 timerInterval = setInterval(() => {
                     const elapsed = Date.now() - startTime;
                     timerDisplay.innerText = new Date(elapsed).toISOString().substr(11, 8);
                 }, 1000);
                 
-                // Ads Auto Refresh (60s)
                 startRefreshLoop();
 
             } catch (err) {
-                alert("Click anywhere to enable wake lock.");
+                alert("Please click anywhere on the page to activate the Wake Lock.");
             }
         }
 
@@ -271,7 +265,6 @@
             clearInterval(timerInterval);
             stopRefreshLoop();
 
-            // UI Reset
             statusIcon.innerHTML = "💤";
             statusIcon.classList.remove('active');
             statusLabel.innerText = "SYSTEM SLEEPING";
@@ -282,16 +275,38 @@
             timerDisplay.innerText = "00:00:00";
         }
 
-        // --- ADS REFRESH (Simulated) ---
+        // --- REAL AD REFRESH LOGIC ---
+        function renderAd(containerId, adData) {
+            const container = document.getElementById(containerId);
+            if(!container) return;
+
+            // Clear old ad
+            container.innerHTML = '';
+
+            // Re-inject script properly
+            const confScript = document.createElement('script');
+            confScript.type = 'text/javascript';
+            confScript.text = `atOptions = { 'key' : '${adData.key}', 'format' : 'iframe', 'height' : ${adData.height}, 'width' : ${adData.width}, 'params' : {} };`;
+            
+            const srcScript = document.createElement('script');
+            srcScript.type = 'text/javascript';
+            srcScript.src = adData.src;
+
+            container.appendChild(confScript);
+            container.appendChild(srcScript);
+        }
+
         function startRefreshLoop() {
+            // Initial Load
+            renderAd('top-ad-container', ADS.top);
+            renderAd('bottom-ad-container', ADS.bottom);
+
+            // Refresh Interval (60s)
             if(refreshInterval) clearInterval(refreshInterval);
             refreshInterval = setInterval(() => {
-                const topAd = document.getElementById('top-ad-container');
-                const botAd = document.getElementById('bottom-ad-container');
-                
-                if(topAd) { topAd.style.display='none'; setTimeout(()=>topAd.style.display='flex', 50); }
-                if(botAd) { botAd.style.display='none'; setTimeout(()=>botAd.style.display='flex', 50); }
-                console.log("Ads Refreshed");
+                console.log("Refreshing Ads...");
+                renderAd('top-ad-container', ADS.top);
+                renderAd('bottom-ad-container', ADS.bottom);
             }, 60000);
         }
 
@@ -299,6 +314,13 @@
             if(refreshInterval) clearInterval(refreshInterval);
         }
 
+        // Initialize Ads on Load
+        window.onload = () => {
+            renderAd('top-ad-container', ADS.top);
+            renderAd('bottom-ad-container', ADS.bottom);
+        };
+
+        // Re-acquire Wake Lock if visibility changes
         document.addEventListener('visibilitychange', async () => {
             if (isRunning && document.visibilityState === 'visible' && wakeLock === null) {
                 if ('wakeLock' in navigator) wakeLock = await navigator.wakeLock.request('screen');
