@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://djutgjdtd5.github.io/mouse-jiggler/sitemap.xml
+Sitemap: https://orbitwebtools.github.io/mouse-jiggler-online/sitemap.xml
