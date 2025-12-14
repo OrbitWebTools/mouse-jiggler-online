@@ -11,12 +11,13 @@
     
     <meta name="keywords" content="mouse jiggler online, keep teams green, prevent computer sleep, fake mouse movement, stay awake online, mouse mover website, slack always active, teams status hack, wfh tools, caffeine for mac online">
     
-    <meta name="author" content="StayAwake Pro">
-    <link rel="canonical" href="https://djutgjdtd5.github.io/mouse-jiggler/" />
+    <meta name="author" content="OrbitWebTools">
+    <link rel="canonical" href="https://orbitwebtools.github.io/mouse-jiggler-online/" />
 
     <meta property="og:title" content="🟢 Keep Teams Green - Free Online Mouse Jiggler">
     <meta property="og:description" content="Prevent Away Status instantly. No install needed. Click to activate.">
     <meta property="og:image" content="https://img.icons8.com/fluency/512/mouse-left-click.png">
+    <meta property="og:url" content="https://orbitwebtools.github.io/mouse-jiggler-online/">
     <meta property="og:type" content="website">
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖱️</text></svg>">
@@ -25,9 +26,10 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "StayAwake Pro - Mouse Jiggler",
+      "name": "OrbitWebTools - Mouse Jiggler",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Web Browser",
+      "url": "https://orbitwebtools.github.io/mouse-jiggler-online/",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "8500" },
       "description": "Keeps PC and Mac awake to maintain active status on Teams and Slack."
@@ -56,11 +58,11 @@
     <style>
         /* --- PREMIUM WHITE THEME (Apple Style) --- */
         :root {
-            --primary: #2563eb;       /* Royal Blue */
+            --primary: #2563eb;       
             --primary-hover: #1d4ed8;
-            --success: #10b981;       /* Teams Green */
+            --success: #10b981;       
             --bg: #ffffff;
-            --surface: #f8fafc;       /* Light Gray Surface */
+            --surface: #f8fafc;       
             --border: #e2e8f0;
             --text-main: #0f172a;
             --text-sub: #64748b;
@@ -104,7 +106,7 @@
             width: 100%; max-width: 728px; min-height: 90px;
             background: #f1f5f9; border-radius: 8px; margin: 30px auto;
             display: flex; align-items: center; justify-content: center;
-            overflow: hidden; border: 1px border #e2e8f0;
+            overflow: hidden; border: 1px solid #e2e8f0;
         }
 
         /* HERO SECTION */
@@ -123,7 +125,6 @@
             position: relative; overflow: hidden; transition: all 0.3s ease;
         }
         
-        /* Active State Animation */
         .tool-card.active { border-color: var(--success); background: #f0fdf4; }
         
         .icon-circle {
@@ -170,7 +171,6 @@
 
         footer { margin-top: 4rem; border-top: 1px solid var(--border); padding: 2rem; color: var(--text-sub); font-size: 0.9rem; text-align: center; }
 
-        /* Hidden Video for WakeLock Hack */
         #dummyVideo { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 
     </style>
@@ -179,8 +179,8 @@
 
     <nav>
         <div class="nav-inner">
-            <div class="logo">🖱️ StayAwake<span>Pro</span></div>
-            <div class="status-badge">v2.0 Premium</div>
+            <div class="logo">🖱️ OrbitWeb<span style="color:var(--primary)">Tools</span></div>
+            <div class="status-badge">Online Jiggler</div>
         </div>
     </nav>
 
@@ -219,12 +219,13 @@
         </div>
 
         <div class="ad-container">
-             </div>
+             <script type='text/javascript' src='//pl28120871.effectivegatecpm.com/b8/2a/fe/b82afee8cc534f12fba12741bfb629a1.js'></script>
+        </div>
 
         <div class="content-section">
             <h2>Why use an Online Mouse Jiggler?</h2>
             <p>Working from home (WFH) comes with challenges, and one of them is the annoying "Away" status on Microsoft Teams, Slack, Skype, or Outlook. If you step away for 5 minutes, your status turns yellow, giving the impression that you aren't working.</p>
-            <p><strong>StayAwake Pro</strong> solves this issue. It is a "Mouse Jiggler Online" that prevents your screen from going to sleep.</p>
+            <p><strong>OrbitWebTools</strong> solves this issue. It is a "Mouse Jiggler Online" that prevents your screen from going to sleep.</p>
             
             <h3>How it works:</h3>
             <p>Unlike fake mouse movers that physically move your cursor, this website uses the <strong>HTML5 WakeLock API</strong> and a hidden video loop. This signals your operating system that "activity" is happening, preventing the sleep mode trigger.</p>
@@ -247,7 +248,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 StayAwake Pro. This tool is for educational purposes. <br> <a href="#" style="color:var(--primary); text-decoration:none;">Privacy Policy</a></p>
+        <p>&copy; 2025 OrbitWebTools. <a href="#" style="color:var(--primary); text-decoration:none;">Privacy Policy</a></p>
     </footer>
 
     <video id="dummyVideo" loop playsinline muted>
@@ -255,7 +256,7 @@
     </video>
 
     <script>
-        // 💰 DIRECT LINK SETTING (Popunder on Stop)
+        // 💰 DIRECT LINK SETTING
         const DIRECT_LINK = "https://www.effectivegatecpm.com/wtv8888v?key=d837f9dc7c48bf7b0d830d9f0d04a531";
 
         // ELEMENTS
@@ -290,7 +291,7 @@
                     wakeLock = await navigator.wakeLock.request('screen');
                 }
                 
-                // 2. Play Hidden Video (Backup for older browsers)
+                // 2. Play Hidden Video
                 vid.play().catch(e => console.log("Autoplay prevented"));
 
                 startTime = Date.now();
@@ -299,7 +300,7 @@
                 appCard.classList.add('active');
                 icon.innerHTML = "⚡";
                 statusLbl.innerText = "STATUS: ACTIVE & AWAKE";
-                statusLbl.style.color = "#15803d"; // Dark Green
+                statusLbl.style.color = "#15803d"; 
                 startBtn.style.display = 'none';
                 stopBtn.style.display = 'flex';
 
@@ -310,7 +311,7 @@
                     let h = String(Math.floor(elapsed / 3600000)).padStart(2, '0');
                     let m = String(date.getUTCMinutes()).padStart(2, '0');
                     let s = String(date.getUTCSeconds()).padStart(2, '0');
-                    timerTxt.innerText = `${h}:${m}:${s}`;
+                    timerTxt.innerText = `${h}:${mm}:${s}`;
                 }, 1000);
 
                 toggleTitle();
@@ -322,12 +323,11 @@
 
         // STOP
         function stopJiggler() {
-            // 💰 TRIGGER POPUNDER (Revenue)
+            // 💰 TRIGGER POPUNDER
             if(DIRECT_LINK) {
                 window.open(DIRECT_LINK, '_blank');
             }
 
-            // Release Lock
             if (wakeLock) {
                 wakeLock.release().then(() => wakeLock = null);
             }
@@ -349,7 +349,6 @@
         startBtn.addEventListener('click', startJiggler);
         stopBtn.addEventListener('click', stopJiggler);
 
-        // Auto Re-Lock on Tab Switch
         document.addEventListener('visibilitychange', async () => {
             if (wakeLock !== null && document.visibilityState === 'visible') {
                 wakeLock = await navigator.wakeLock.request('screen');
